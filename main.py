@@ -1,4 +1,5 @@
 import base64
+from config import id
 from email.mime.text import MIMEText
 from googleapiclient.discovery import build
 from google.oauth2.credentials import Credentials
@@ -30,3 +31,4 @@ send_message = (service.users().messages().send(userId="me", body=message).execu
 
 # Выводим сообщение об успешной отправке
 print(F'Сообщение успешно отправлено на адрес {to} с ID: {send_message["id"]}.')
+print('id = ', id)
